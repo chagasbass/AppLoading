@@ -1,17 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace AppLoading
 {
     public partial class MainPage : ContentPage
     {
+        private MainViewModel ViewModel
+        {
+            get { return BindingContext as MainViewModel; }
+            set { BindingContext = value; }
+        }
+
         public MainPage()
         {
             InitializeComponent();
+            ViewModel = new MainViewModel();
+            BindingContext = ViewModel;
+
         }
     }
 }
